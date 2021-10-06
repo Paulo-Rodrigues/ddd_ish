@@ -34,4 +34,15 @@ describe Order do
 
     expect(order.total).to eq(360)
   end
+
+  it 'Should do a order with 3 items' do
+    cpf = '243.186.330-12'
+    order = described_class.new(cpf)
+
+    order.add_item(Item.new(1, 'Roupas', 'Camisa', 1000, 100, 30, 10, 3), 1)
+    order.add_item(Item.new(2, 'Roupas', 'Calça', 5000, 100, 50, 50, 20), 1)
+    order.add_item(Item.new(3, 'Roupas', 'Jaqueta', 30, 10, 10, 10, 0.9), 3)
+
+    expect(order.freight).to eq(260)
+  end
 end

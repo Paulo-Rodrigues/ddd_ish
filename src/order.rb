@@ -1,9 +1,10 @@
 class Order
-  attr_reader :cpf
+  attr_reader :cpf, :freight
 
   def initialize(cpf)
     @cpf = validate_cpf(cpf)
     @order_items = []
+    @freight = 0
   end
 
   def validate_cpf(value)
@@ -12,6 +13,7 @@ class Order
   end
 
   def add_item(item, quantity)
+    @freight += item.freight * quantity
     @order_items << OrderItem.new(item.id, item.price, quantity)
   end
 
