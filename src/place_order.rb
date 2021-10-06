@@ -7,8 +7,8 @@ class PlaceOrder
   end
 
   def execute(input)
-    order = Order.new(input[:cpf])
-    input[:order_items].each do |order_item|
+    order = Order.new(input.cpf)
+    input.order_items.each do |order_item|
       item = @item_repository.find_by_id(order_item[:id])
       order.add_item(item, order_item[:quantity])
     end
