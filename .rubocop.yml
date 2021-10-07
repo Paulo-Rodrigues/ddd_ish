@@ -1,0 +1,18 @@
+AllCops:
+ TargetRubyVersion: 3.0
+ NewCops: enable
+ Exclude:
+   - 'spec/spec_helper.rb'
+   - 'domain/entity/cpf.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+ ExcludedMethods: ['describe', 'context', 'let']
+
+Style/Documentation:
+  Enabled: false
+
+Lint/DisjunctiveAssignmentInConstructor:
+  Enabled: false

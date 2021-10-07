@@ -13,6 +13,6 @@ class PlaceOrder
       order.add_item(item, order_item[:quantity])
     end
     order_repository.save(order)
-    {total: order.total}
+    { total: order.total }
   end
 end

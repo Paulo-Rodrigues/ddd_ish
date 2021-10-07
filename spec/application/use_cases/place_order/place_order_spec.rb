@@ -21,4 +21,3 @@ describe PlaceOrder do
     expect(output[:total]).to eq(900)
   end
 end
-

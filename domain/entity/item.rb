@@ -1,7 +1,7 @@
 class Item
   attr_reader :id, :category, :description, :price, :width, :height, :length, :weight
 
-  def initialize(id, category, description, price, width=0, height=0, length=0, weight=0)
+  def initialize(id, category, description, price, width = 0, height = 0, length = 0, weight = 0)
     @id = id
     @category = category
     @description = description
@@ -13,7 +13,7 @@ class Item
   end
 
   def volume
-    width.to_f/100 * height.to_f/100 * length.to_f/100
+    width.to_f / 100 * height.to_f / 100 * length.to_f / 100
   end
 
   def density
@@ -21,7 +21,7 @@ class Item
   end
 
   def freight
-    freight = 1000 * volume * (density/100)
+    freight = 1000 * volume * (density / 100)
     freight > 10 ? freight : 10
   end
 end

@@ -8,7 +8,7 @@ describe Order do
   it 'Should not do order with an invalid CPF' do
     cpf = '111.111.111-11'
 
-    expect{ Order.new(cpf) }.to raise_error(RuntimeError)
+    expect { Order.new(cpf) }.to raise_error(RuntimeError)
   end
 
   it 'Should do a order with 3 items' do

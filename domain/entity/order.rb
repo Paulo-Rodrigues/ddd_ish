@@ -9,6 +9,7 @@ class Order
 
   def validate_cpf(value)
     return value if CPF.validate(value)
+
     raise 'Invalid CPF'
   end
 
@@ -22,10 +23,8 @@ class Order
   end
 
   def total
-    total = @order_items.reduce(0) { |total, item| total += item.total }
-    if apply_coupon(@coupon)
-      total -= ((total * @coupon.percentage) / 100)
-    end
-    total
+    order_total = @order_items.reduce(0) { |total, item| total + item.total }
+    order_total -= ((order_total * @coupon.percentage) / 100) if apply_coupon(@coupon)
+    order_total
   end
 end
