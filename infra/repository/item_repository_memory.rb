@@ -12,4 +12,8 @@ class ItemRepositoryMemory
     return 'Not Found' if !item
     item
   end
+
+  def count
+    @items.count
+  end
 end
