@@ -1,6 +1,6 @@
 FROM ruby:3.0.0
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y postgresql-client
 WORKDIR /ddd_ish
 
 COPY Gemfile ./Gemfile
